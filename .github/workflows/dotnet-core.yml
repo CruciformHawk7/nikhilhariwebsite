@@ -5,20 +5,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.403 #Blazor WebAssembly requires 3.1.100
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
-    - name: Publish Blazor webassembly using dotnet 
+        dotnet-version: 3.1.403
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Publish 
       run: dotnet publish -c Release --no-build -o ./
     - name: Publish generated Blazor webassembly to Netlify
       uses: netlify/actions/cli@master #uses Netlify Cli actions
-      env: # these environment variables are added in github secrets
+      env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       with:
-          args: deploy --dir=nikhilhari/dist --prod #push dist folder to Netlify
+          args: deploy --dir=nikhilhari/dist --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]' 
