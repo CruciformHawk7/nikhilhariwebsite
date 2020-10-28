@@ -23,6 +23,8 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Publish
       run: dotnet publish -c Release --no-build -o rel
+    - name: Add NoJekyll
+      run: touch rel/.nojekyll
     - name: Push To My GitHub Pages repo
       uses: cpina/github-action-push-to-another-repository@master
       env:
