@@ -2,6 +2,7 @@
 
 [![Actions Status](https://github.com/cruciformhawk7/nikhilhariwebsite/workflows/GitHub%20Pages/badge.svg)](https://github.com/CruciformHawk7/nikhilhariwebsite/actions?query=workflow%3A%22GitHub+Pages%22)
 [![Push to Netlify](https://github.com/CruciformHawk7/nikhilhariwebsite/workflows/Push%20to%20Netlify/badge.svg)](https://github.com/CruciformHawk7/nikhilhariwebsite/actions?query=workflow%3A%22Push+to+Netlify%22)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/be97ba1c-e145-4e6a-a910-37a3f6d05266/deploy-status)](https://app.netlify.com/sites/determined-austin-2fb7e9/deploys)
 
 This is my website. For now, the contents of this repository is written using Blazor WebAssembly, and deployed to two places:
 
