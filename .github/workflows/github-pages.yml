@@ -1,0 +1,35 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.403
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Publish
+      run: dotnet publish -c Release --no-build -o rel
+    - name: Push To My GitHub Pages repo
+      uses: cpina/github-action-push-to-another-repository@master
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }} 
+      with:
+        source-directory: 'rel/wwwroot'
+        destination-github-username: 'CruciformHawk7'
+        destination-repository-name: 'cruciformhawk7.github.io'
+        user-email: nikhil_hari@live.com
+
