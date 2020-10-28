@@ -27,9 +27,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GIT_CONFIG_NAME: Nikhil Hari
-        GIT_CONFIG_EMAIL: nikhil_hari@live.com
-        REPOSITORY_NAME: CruciformHawk7/cruciformhawk7.github.io 
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: master
+        BRANCH: github-pages
         FOLDER: rel/wwwroot
