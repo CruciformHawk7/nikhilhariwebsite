@@ -26,9 +26,8 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: rel/wwwroot
-        deploy_key: ${{ secrets.ACCESS_TOKEN }}
+        personal_token: ${{ secrets.ACCESS_TOKEN }}
         external_repository: 'CruciformHawk7/cruciformhawk7.github.io'
         publish_branch: 'master'
         
