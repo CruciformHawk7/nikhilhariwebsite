@@ -23,9 +23,12 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Publish
       run: dotnet publish -c Release --no-build -o rel
-    - name: Push To GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
+    - name: Push To My GitHub Pages repo
+      uses: cpina/github-action-push-to-another-repository@master
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }} 
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: github-pages
-        FOLDER: rel/wwwroot
+        source-directory: 'rel/wwwroot'
+        destination-github-username: 'CruciformHawk7'
+        destination-repository-name: 'cruciformhawk7.github.io'
+        user-email: nikhil_hari@live.com
