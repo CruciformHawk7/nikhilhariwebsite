@@ -1,4 +1,4 @@
-name: NikhilHariWebsite
+name: Push to Netlify
 on: [push] 
 
 jobs:
