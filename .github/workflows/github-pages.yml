@@ -25,13 +25,15 @@ jobs:
       run: dotnet publish -c Release --no-build -o rel
     - name: Add NoJekyll
       run: ls rel/wwwroot && echo "W" && touch rel/wwwroot/.nojekyll && echo "Done" && ls -a rel/wwwroot
-    - name: Push To My GitHub Pages repo
-      uses: cpina/github-action-push-to-another-repository@master
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }} 
-      with:
-        source-directory: 'rel/wwwroot'
-        destination-github-username: 'CruciformHawk7'
-        destination-repository-name: 'cruciformhawk7.github.io'
-        user-email: nikhil_hari@live.com
-
+    - name: Deploy to GH Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with: 
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        FOLDER: 'rel/wwwroot'
+        CLEAN: true
+        GIT_CONFIG_NAME: 'Nikhil Hari'
+        GIT_CONFIG_EMAIL: 'nikhil_hari@live.com'
+        REPOSITORY_NAME: 'CruciformHawk7/cruciformhawk7.github.io'
+        BRANCH: 'master'
+        
