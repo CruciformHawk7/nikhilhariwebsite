@@ -1642,11 +1642,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nikhil/Code/nikhilhari/nikhilhari.csproj",
-      "projectName": "nikhilhari",
-      "projectPath": "/home/nikhil/Code/nikhilhari/nikhilhari.csproj",
+      "projectUniqueName": "/home/nikhil/Code/nikhilhariwebsite/nikhilhariwebsite.csproj",
+      "projectName": "nikhilhariwebsite",
+      "projectPath": "/home/nikhil/Code/nikhilhariwebsite/nikhilhariwebsite.csproj",
       "packagesPath": "/home/nikhil/.nuget/packages/",
-      "outputPath": "/home/nikhil/Code/nikhilhari/obj/",
+      "outputPath": "/home/nikhil/Code/nikhilhariwebsite/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/nikhil/.nuget/NuGet/NuGet.Config"
