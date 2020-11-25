@@ -7,7 +7,7 @@
 This is my website. For now, the contents of this repository is written using Blazor WebAssembly, and deployed to two places:
 
 * [Netlify](https://determined-austin-2fb7e9.netlify.app/)
-* [GitHub Pages](https://cruciformhawk7.github.io/)
+* [My website via GitHub Pages](https://nikhilhari.in/)
 
 The main aim of this project is not just to have a fancier website that is interactive, but explore [GitHub Actions](https://github.com/CruciformHawk7/nikhilhariwebsite/actions). Suggestions and fixes are always welcome. The project uses the following actions: 
 
